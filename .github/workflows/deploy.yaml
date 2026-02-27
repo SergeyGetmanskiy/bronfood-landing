@@ -1,0 +1,23 @@
+name: Deploy landing
+
+on:
+  push:
+    branches:
+      - feature/deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy landing via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -e
+            cd /opt/bronfood
+            sudo /opt/bronfood/landing_deploy.sh
