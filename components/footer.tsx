@@ -5,7 +5,7 @@ const legalLinks = [
   { label: "Публичная оферта", href: "/landing/Bronfood_Oferta.docx" },
   { label: "Пользовательское соглашение", href: "/landing/Bronfood_User_Agreement.docx" },
   { label: "Политика конфиденциальности", href: "/landing/Bronfood_Privacy_Policy.docx" },
-  { label: "Правила возврата", href: "#" },
+  { label: "Правила возврата", href: "#refund-rules" },
 ]
 
 export function Footer() {
@@ -74,7 +74,7 @@ export function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  download
+                  download={link.href !== "#refund-rules" ? "" : null}
                   className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
                 >
                   {link.label}

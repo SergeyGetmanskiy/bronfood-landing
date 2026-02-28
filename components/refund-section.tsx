@@ -20,7 +20,7 @@ const refundCases = [
 
 export function RefundSection() {
   return (
-    <section className="border-t border-border py-20 md:py-28">
+    <section id="refund-rules" className="border-t border-border py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
